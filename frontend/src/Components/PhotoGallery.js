@@ -6,19 +6,23 @@ function PhotoGallery() {
     return (
         <div className='photogallery-container'>
             <h1 className='photogallery-title'>Photo Gallery</h1>
+
             <div className="photogallery-images">
-                <img src="https://source.unsplash.com/1300x1200/?algeria" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?lebanon" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?qatar" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?uae" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?kuwait" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?oman" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?turkey" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?iran" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?jordan" alt=''/>
-                <img src="https://source.unsplash.com/1300x1200/?Kuwait" alt=''/>
+                <img src="/assets/gallery/gallery1.jpg" alt=''/>
+                <img src="/assets/gallery/gallery2.jpg" alt=''/>
+                <img src="/assets/gallery/gallery3.jpg" alt=''/>
+                <img src="/assets/gallery/gallery4.jpg" alt=''/>
+                <img src="/assets/gallery/gallery5.jpg" alt=''/>
+                <img src="/assets/gallery/gallery6.jpg" alt=''/>
+                <img src="/assets/gallery/gallery7.jpg" alt=''/>
+                <img src="/assets/gallery/gallery8.jpg" alt=''/>
+                
             </div>
-            <button>VIEW MORE<ArrowForwardIosIcon style={{fontSize:20}}/></button>
+
+            <button>
+                VIEW MORE
+                <ArrowForwardIosIcon style={{fontSize:20}}/>
+            </button>
         </div>
     )
 }

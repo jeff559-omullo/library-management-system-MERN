@@ -1,143 +1,121 @@
-/*Desktop View*/
-.header{
+/* ================= HEADER ================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0 40px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
-    height: 60px;
-    width: 100%;
-    position: fixed;
-    z-index: 100;
-    background-color: rgb(16,25,13);
-    box-shadow: 0 1px 4px rgba(146,161,176,.15);
-    top: 0%;
+
+    background-color: rgb(16, 25, 13);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 1000;
 }
 
-.logo-nav a{
-    font-size: 20px;
-    color: rgb(233,83,75);
+/* Logo Section */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-link span {
+    font-size: 22px;
     font-weight: 800;
+    color: rgb(233,83,75);
 }
 
-.logo-nav a:hover{
-    color: wheat;
-    transition: all ease 0.5s;
-}
-
-.search-input{
-    width: 100%;
-    margin-left: 15px;
-    max-width: 1800px;
+/* Search */
+.search-input {
+    width: 350px;
     height: 40px;
-    outline: none;
-    padding: 10px 15px;
-    font-size: 18px;
-    border-radius: 10px;
+    padding: 8px 15px;
+    border-radius: 8px;
     border: 1px solid white;
+    font-size: 16px;
+    outline: none;
 }
 
-.nav-options{
-    padding-left: 25px;
-    display: flex;
-    list-style-type: none;
-    margin-bottom: 15px!important;
-}
-
-.nav-right{
+/* Right Section */
+.nav-right {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-  
-.option{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 40px;
-    margin-top: 15px;
-    color: rgb(243, 6, 6);
+    gap: 30px;
 }
 
-.option a{
+/* Nav Links */
+.nav-options {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.option a {
     color: rgb(233,83,75);
-    display: flex;
-    align-items: center;
-    font-weight: 800;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: 0.3s ease;
 }
 
-.option a:hover{
+.option a:hover {
     color: wheat;
-    transition: all ease 0.5s;
 }
 
-a{
-    text-decoration: none!important;
-}
-  
-.option:hover{
-    color: rgb(6, 240, 170);
+/* Remove default anchor underline */
+a {
+    text-decoration: none;
 }
 
-.mobile-menu{
-    display: block;
+/* ================= MOBILE ================= */
+
+.mobile-menu {
+    display: none;
 }
 
-/* Nav Options are given in this to make the search input as big as possible */
+@media (max-width: 768px) {
 
-@media (min-width: 768px){
-    .mobile-menu{
-        display: none!important;
+    .search-input {
+        display: none;
     }
-    .header{
-        display: grid;
-        grid-template-columns: 10% 60%;
-    }
-}
 
-@media (max-width: 768px){
-    /*Mobile View */
-    .header{
-        padding: 0px 10px;
-    }
-    .nav-options{
-        display: flex;
-        width: 100%;
-        height: 280px;
-        position: absolute;
-        top: 60px;
-        left: -100%;
-        opacity: 0;
-        transition: all 0.5s ease;
-        flex-direction: column;
-        list-style-type: none;
-        grid-gap: 0px;
-    }
-    .nav-options.active{
-        background: black;
-        left: 0;
-        opacity: 1;
-        transition: all 0.5s ease;
-        z-index: 100;
-        align-content: center;
-        padding-left: 0px;
-    }
-  
-    .menu-icon{
-        width: 45px;
-        height: 45px;
-        color: rgb(233,83,75);
-        padding: 2px;
-        background-color: rgb(246, 233, 202);
-        border-radius: 5px;
+    .mobile-menu {
+        display: block;
         cursor: pointer;
-        margin:0px 5px 0px 10px;
     }
-    .option{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 10vw;
-        padding: 30px 0px;
+
+    .nav-options {
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        width: 100%;
+        background: black;
+        padding: 20px 0;
+        transition: 0.4s ease;
     }
-}  
+
+    .nav-options.active {
+        left: 0;
+    }
+
+    .option {
+        padding: 15px 0;
+        text-align: center;
+    }
+}
+
+/* Prevent content hiding under fixed header */
+body {
+    padding-top: 70px;
+}
